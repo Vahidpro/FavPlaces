@@ -6,6 +6,7 @@ import "react-native-gesture-handler";
 import AllPlaces from "./screens/AllPlaces";
 import AddPlace from "./screens/AddPlace";
 import IconButton from "./components/UI/IconButton";
+import { Colors } from "./constants/colors";
 
 export default function App() {
 	const Stack = createStackNavigator();
@@ -13,7 +14,13 @@ export default function App() {
 		<>
 			<StatusBar style="auto" />
 			<NavigationContainer>
-				<Stack.Navigator>
+				<Stack.Navigator
+					screenOptions={{
+						headerStyle: { backgroundColor: Colors.primary500 },
+						headerTintColor: Colors.gray700,
+						cardStyle: { backgroundColor: Colors.gray700 },
+					}}
+				>
 					<Stack.Screen
 						name="AllPlaces"
 						component={AllPlaces}
